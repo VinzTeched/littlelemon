@@ -14,6 +14,7 @@
 		E77039B82A82864F00E12DEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77039B72A82864F00E12DEA /* Home.swift */; };
 		E77039BA2A82876700E12DEA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77039B92A82876700E12DEA /* Menu.swift */; };
 		E77039BC2A82B34500E12DEA /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77039BB2A82B34500E12DEA /* EmptyView.swift */; };
+		E77039BE2A82F4DF00E12DEA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77039BD2A82F4DF00E12DEA /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E77039B72A82864F00E12DEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E77039B92A82876700E12DEA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		E77039BB2A82B34500E12DEA /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		E77039BD2A82F4DF00E12DEA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				E753DC322A7D382000A2A246 /* littlelemonApp.swift */,
 				E77039B52A8259FF00E12DEA /* Onboarding.swift */,
+				E77039BD2A82F4DF00E12DEA /* UserProfile.swift */,
 				E77039BB2A82B34500E12DEA /* EmptyView.swift */,
 				E77039B72A82864F00E12DEA /* Home.swift */,
 				E77039B92A82876700E12DEA /* Menu.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				E77039B62A8259FF00E12DEA /* Onboarding.swift in Sources */,
 				E77039BC2A82B34500E12DEA /* EmptyView.swift in Sources */,
+				E77039BE2A82F4DF00E12DEA /* UserProfile.swift in Sources */,
 				E77039B82A82864F00E12DEA /* Home.swift in Sources */,
 				E77039BA2A82876700E12DEA /* Menu.swift in Sources */,
 				E753DC332A7D382000A2A246 /* littlelemonApp.swift in Sources */,
