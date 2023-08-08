@@ -15,6 +15,7 @@ struct Onboarding: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
+    @State var isLoggedIn = false
     
     var body: some View {
         VStack(spacing: 5) {
