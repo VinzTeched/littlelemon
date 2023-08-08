@@ -15,6 +15,7 @@ struct Home: View {
                     return Label("Menu", systemImage: "list.dash")
                 }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
