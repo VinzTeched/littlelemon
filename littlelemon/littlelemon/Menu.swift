@@ -8,6 +8,21 @@
 import SwiftUI
 
 struct Menu: View {
+    @Environment(\.managedObjectContext) private var viewContext    
+    func getMenuData() {
+        let serverUrl = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
+        let url = URL(string: serverUrl)!
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decoder = JSONDecoder()
+                let menu = try? decoder.decode(MenuList.self, from: data)
+                
+            }
+        }
+        task.resume()
+        
+    }
     var body: some View {
         VStack {
             Text("Little Lemon for Agnes")
@@ -16,6 +31,9 @@ struct Menu: View {
             List {
                 
             }
+        }
+        .onAppear() {
+            getMenuData()
         }
     }
 }
