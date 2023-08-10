@@ -7,7 +7,18 @@
 
 import Foundation
 
-struct MenuList: Decodable {
+//struct MenuLists: Decodable {
+//    let menu = [MenuItems]
+//}
+
+struct MenuList: Codable {
+    let menu: [MenuItem]
+}
+
+struct MenuItem: Codable, Identifiable {
     //
-    let menu = [MenuItem]
+    var id = UUID()
+    let title: String
+    let image: String
+    let price: String
 }

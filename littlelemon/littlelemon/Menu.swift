@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Menu: View {
-    @Environment(\.managedObjectContext) private var viewContext    
+    @Environment(\.managedObjectContext) private var viewContext
     func getMenuData() {
         let serverUrl = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
         let url = URL(string: serverUrl)!
@@ -16,11 +16,18 @@ struct Menu: View {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
-                let menu = try? decoder.decode(MenuList.self, from: data)
-                
+                let fullMenu = try? decoder.decode(MenuList.self, from: data)
+                for menu in fullMenu!.menu {
+                    let oneDish = Dish(context: viewContext)
+                    oneDish.title = menu.title
+                    oneDish.image = menu.image
+                    oneDish.price = menu.price
+                }
             }
         }
         task.resume()
+        
+
         
     }
     var body: some View {
