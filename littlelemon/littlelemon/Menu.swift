@@ -23,6 +23,7 @@ struct Menu: View {
                     oneDish.title = menu.title
                     oneDish.image = menu.image
                     oneDish.price = menu.price
+                    oneDish.describe = menu.description
                 }
                 try? viewContext.save()
             }
@@ -40,15 +41,20 @@ struct Menu: View {
                 (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
-                        HStack { 
-                            Text(dish.title ?? "")
-                            Text(dish.price ?? "")
-                            AsyncImage(url: URL(string: dish.image ?? "")){ image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
+                        NavigationLink(destination:
+                                        MenuDetails(dish)) {
+                            HStack {
+                                AsyncImage(url: URL(string: dish.image ?? "")){ image in
+                                    image.resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 50, height: 50)
+                                
+                                Text(dish.title ?? "")
+                                Spacer()
+                                Text((dish.price ?? "") + " USD" )
                             }
-                            .frame(width: 50, height: 50)
                         }
                     }
                 }
