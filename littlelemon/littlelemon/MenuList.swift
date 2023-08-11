@@ -11,13 +11,12 @@ import Foundation
 //    let menu = [MenuItems]
 //}
 
-struct MenuList: Codable {
+struct MenuList: Decodable {
     let menu: [MenuItem]
 }
 
-struct MenuItem: Codable, Identifiable {
+struct MenuItem: Decodable {
     //
-    var id = UUID()
     let title: String
     let image: String
     let price: String

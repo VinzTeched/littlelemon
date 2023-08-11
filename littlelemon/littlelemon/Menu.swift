@@ -10,6 +10,7 @@ import SwiftUI
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     func getMenuData() {
+        PersistenceController.shared.clear()
         let serverUrl = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
         let url = URL(string: serverUrl)!
         let request = URLRequest(url: url)
@@ -23,11 +24,10 @@ struct Menu: View {
                     oneDish.image = menu.image
                     oneDish.price = menu.price
                 }
+                try? viewContext.save()
             }
         }
         task.resume()
-        
-
         
     }
     var body: some View {
@@ -35,14 +35,31 @@ struct Menu: View {
             Text("Little Lemon for Agnes")
             Text("Chicago")
             Text("The place where all go to eat and satiate themselves.")
-            List {
-                
+           
+            FetchedObjects() {
+                (dishes: [Dish]) in
+                List {
+                    ForEach(dishes) { dish in
+                        HStack { 
+                            Text(dish.title ?? "")
+                            Text(dish.price ?? "")
+                            AsyncImage(url: URL(string: dish.image ?? "")){ image in
+                                image.resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 50, height: 50)
+                        }
+                    }
+                }
             }
         }
         .onAppear() {
             getMenuData()
         }
     }
+    
+  
 }
 
 struct Menu_Previews: PreviewProvider {
