@@ -46,11 +46,41 @@ struct Menu: View {
                         .frame(width: 50, height: 50)
                         
                 }
+                .padding(.trailing, 10)
             }
-            Text("Little Lemon for Agnes")
-            Text("Chicago")
-            Text("The place where all go to eat and satiate be happy.")
-            TextField("Search Text", text: $searchText)
+            VStack(alignment: .leading) {
+                Text("Little Lemon")
+                    .font(.system(size: 52))
+                    .padding(0)
+                HStack {
+                    VStack (alignment: .leading){
+                        Text("Chicago")
+                            .font(.system(size: 28))
+                        Text("We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                            .font(.system(size: 17))
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: 200)
+                    Spacer()
+                    VStack{
+                        Image("Hero image")
+                            .resizable()
+                            .frame(width:140, height: 150)
+                            .cornerRadius(20)
+                    }
+                }
+                TextField("Search Text", text: $searchText)
+                    
+            }
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 100,
+                alignment: .topLeading
+                )
+            .padding(14)
+            .background(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+            
             Divider()
                 .padding(.bottom, 6)
             FetchedObjects(predicate: buildPredicate(),sortDescriptors: buildSortDescriptors()) {
@@ -79,7 +109,6 @@ struct Menu: View {
         .onAppear() {
             getMenuData()
         }
-        .padding()
     }
     
     private func buildSortDescriptors() -> [NSSortDescriptor] {
