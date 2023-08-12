@@ -35,6 +35,18 @@ struct Menu: View {
     }
     var body: some View {
         VStack {
+            Group{
+                HStack {
+                    Spacer()
+                    Image("Logo")
+                        .padding(.trailing, -40)
+                    Spacer()
+                    Image("Profile")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        
+                }
+            }
             Text("Little Lemon for Agnes")
             Text("Chicago")
             Text("The place where all go to eat and satiate be happy.")
