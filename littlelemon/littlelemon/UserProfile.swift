@@ -111,6 +111,23 @@ struct UserProfile: View {
                     .background(Color(hue: 0.138, saturation: 0.966, brightness: 0.925))
                     .cornerRadius(10)
                     .foregroundColor(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+                    
+                    HStack (alignment: .center){
+                        Button("Discard Changes"){}
+                            .padding(10)
+                            .foregroundColor(.black)
+                            .border(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+                            .font(.system(size: 14))
+                        
+                        Button("Save Changes"){}
+                            .padding(10)
+                            .background(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding()
+                            .font(.system(size: 14))
+                    }
+                    .frame(minWidth: 0, maxWidth: .infinity)
                 }
                 Spacer()
             
