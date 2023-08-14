@@ -13,6 +13,10 @@ struct UserProfile: View {
     @State private var firstName = UserDefaults.standard.string(forKey: "first name key")!
     @State private var lastName = UserDefaults.standard.string(forKey: "last name key")!
     @State private var email = UserDefaults.standard.string(forKey: "email key")!
+    @State private var orderStatus = true
+    @State private var passwordChange = false
+    @State private var specialOffer = true
+    @State private var newsletter = false
     
     
     var body: some View {
@@ -81,15 +85,32 @@ struct UserProfile: View {
                     }
                     Group {
                         Text("Email Notification")
-                        GroupBox(label: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label@*/Text("Label")/*@END_MENU_TOKEN@*/) {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+                        HStack {
+                            CheckBoxView(checked: $orderStatus)
+                            Text("Order Statuses")
                         }
+                        HStack {
+                            CheckBoxView(checked: $passwordChange)
+                            Text("Password Changes")
+                        }
+                        HStack {
+                            CheckBoxView(checked: $specialOffer)
+                            Text("Special Offers")
+                        }
+                        HStack {
+                            CheckBoxView(checked: $newsletter)
+                            Text("Newsletter")
+                        }
+                        
                     }
                     Button("Logout") {
                         UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
                         dismiss()
                     }
-                    .foregroundColor(.red)
+                    .frame(minWidth: 200, maxWidth: .infinity, minHeight: 35)
+                    .background(Color(hue: 0.138, saturation: 0.966, brightness: 0.925))
+                    .cornerRadius(10)
+                    .foregroundColor(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
                 }
                 Spacer()
             
@@ -153,6 +174,17 @@ struct NavBar: View {
     }
 }
 
+struct CheckBoxView: View {
+    @Binding var checked: Bool
+
+    var body: some View {
+        Image(systemName: checked ? "checkmark.square.fill" : "square")
+            .foregroundColor(checked ? Color.blue : Color.secondary)
+            .onTapGesture {
+                self.checked.toggle()
+            }
+    }
+}
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
