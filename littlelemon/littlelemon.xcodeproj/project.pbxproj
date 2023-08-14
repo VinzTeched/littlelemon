@@ -21,6 +21,8 @@
 		E79DEF1A2A84DE2600288283 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DEF192A84DE2600288283 /* MenuItem.swift */; };
 		E79DEF1C2A84DE3400288283 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79DEF1B2A84DE3400288283 /* MenuList.swift */; };
 		E79DEF1F2A84EB4300288283 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E79DEF1D2A84EB4300288283 /* ExampleDatabase.xcdatamodeld */; };
+		E7A4376B2A8922F100F77B07 /* MarkaziText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7A4376A2A8922F100F77B07 /* MarkaziText-Medium.ttf */; };
+		E7A4376D2A89239300F77B07 /* MarkaziText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7A4376C2A89239300F77B07 /* MarkaziText-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		E79DEF192A84DE2600288283 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		E79DEF1B2A84DE3400288283 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		E79DEF1E2A84EB4300288283 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		E7A437672A891EC500F77B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E7A4376A2A8922F100F77B07 /* MarkaziText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Medium.ttf"; sourceTree = "<group>"; };
+		E7A4376C2A89239300F77B07 /* MarkaziText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +60,6 @@
 		E753DC262A7D382000A2A246 = {
 			isa = PBXGroup;
 			children = (
-				E7989D6D2A8662D4003EE054 /* MenuDetails.swift */,
 				E753DC312A7D382000A2A246 /* littlelemon */,
 				E753DC302A7D382000A2A246 /* Products */,
 			);
@@ -72,10 +76,15 @@
 		E753DC312A7D382000A2A246 /* littlelemon */ = {
 			isa = PBXGroup;
 			children = (
+				E7A437672A891EC500F77B07 /* Info.plist */,
 				E753DC322A7D382000A2A246 /* littlelemonApp.swift */,
+				E7A437642A891AD600F77B07 /* font */,
 				E77039B52A8259FF00E12DEA /* Onboarding.swift */,
 				E77039BD2A82F4DF00E12DEA /* UserProfile.swift */,
+				E7A4376A2A8922F100F77B07 /* MarkaziText-Medium.ttf */,
+				E7A4376C2A89239300F77B07 /* MarkaziText-Regular.ttf */,
 				E79DEF192A84DE2600288283 /* MenuItem.swift */,
+				E7989D6D2A8662D4003EE054 /* MenuDetails.swift */,
 				E79DEF1B2A84DE3400288283 /* MenuList.swift */,
 				E79DEF152A84DDC900288283 /* FetchedObjects.swift */,
 				E77039BB2A82B34500E12DEA /* EmptyView.swift */,
@@ -95,6 +104,13 @@
 				E753DC392A7D382200A2A246 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E7A437642A891AD600F77B07 /* font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +171,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A4376D2A89239300F77B07 /* MarkaziText-Regular.ttf in Resources */,
+				E7A4376B2A8922F100F77B07 /* MarkaziText-Medium.ttf in Resources */,
 				E753DC3A2A7D382200A2A246 /* Preview Assets.xcassets in Resources */,
 				E753DC372A7D382200A2A246 /* Assets.xcassets in Resources */,
 			);
@@ -309,6 +327,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"littlelemon/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = littlelemon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +356,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"littlelemon/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = littlelemon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

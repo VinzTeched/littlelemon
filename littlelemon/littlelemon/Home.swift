@@ -20,6 +20,14 @@ struct Home: View {
                 .tabItem {
                     return Label("Profile", systemImage: "square.and.pencil")
                 }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Image(systemName: "app.fill")
+                            Text("helslk")
+                        }
+                    }
+                }
         }
         .navigationBarBackButtonHidden(true)
     }
