@@ -54,6 +54,7 @@ struct UserProfile: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
+                            .padding(.bottom, 4)
                         
                         Text("Last name")
                             .padding(.bottom, -5)
@@ -63,6 +64,7 @@ struct UserProfile: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
+                            .padding(.bottom, 4)
                         
                         Text("Email")
                             .padding(.bottom, -5)
@@ -72,6 +74,7 @@ struct UserProfile: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
+                            .padding(.bottom, 4)
                         
                         Text("Phone number")
                             .padding(.bottom, -5)
@@ -83,26 +86,37 @@ struct UserProfile: View {
                                     .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
                         
                     }
+                    .font(.system(size: 14))
                     Group {
                         Text("Email Notification")
+                            .font(.system(size: 16))
+                            .padding(.top, 10)
+                            .bold()
+                        
                         HStack {
                             CheckBoxView(checked: $orderStatus)
                             Text("Order Statuses")
                         }
+                        
                         HStack {
                             CheckBoxView(checked: $passwordChange)
                             Text("Password Changes")
                         }
+                        
                         HStack {
                             CheckBoxView(checked: $specialOffer)
                             Text("Special Offers")
                         }
+                        
                         HStack {
                             CheckBoxView(checked: $newsletter)
                             Text("Newsletter")
                         }
                         
                     }
+                    .padding(.top, 3)
+                    .font(.system(size: 14))
+                    
                     Button("Logout") {
                         UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
                         dismiss()
@@ -111,6 +125,7 @@ struct UserProfile: View {
                     .background(Color(hue: 0.138, saturation: 0.966, brightness: 0.925))
                     .cornerRadius(10)
                     .foregroundColor(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+                    .padding(.vertical, 15)
                     
                     HStack (alignment: .center){
                         Button("Discard Changes"){}
@@ -124,7 +139,7 @@ struct UserProfile: View {
                             .background(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                            .padding()
+                            .padding(.leading, 10)
                             .font(.system(size: 14))
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
