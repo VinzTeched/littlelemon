@@ -13,6 +13,7 @@ struct UserProfile: View {
     @State private var firstName = UserDefaults.standard.string(forKey: "first name key")!
     @State private var lastName = UserDefaults.standard.string(forKey: "last name key")!
     @State private var email = UserDefaults.standard.string(forKey: "email key")!
+    @State private var phone = ""
     @State private var orderStatus = true
     @State private var passwordChange = false
     @State private var specialOffer = true
@@ -79,7 +80,7 @@ struct UserProfile: View {
                         Text("Phone number")
                             .padding(.bottom, -5)
                             .font(.system(size: 12))
-                        TextField("Phone Number", text: $email)
+                        TextField("Phone Number", text: $phone)
                             .padding(7)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
