@@ -18,9 +18,13 @@ struct Onboarding: View {
     @State var email = ""
     @State var isLoggedIn = false
     @State var path = NavigationPath()
+    @State var error = false
+    @State var errorMessage = ""
     
+     
     var body: some View {
-        NavigationStack(path: $path) {
+        
+        NavigationStack {
             VStack(spacing: 5) {
                 Group{
                     HStack {
@@ -59,8 +63,10 @@ struct Onboarding: View {
                         VStack{
                             Image("Hero image")
                                 .resizable()
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width:140, height: 150)
-                                .cornerRadius(20)
+                                .clipShape(Rectangle())
+                                .cornerRadius(16)
                         }
                     }
                 }
@@ -75,6 +81,16 @@ struct Onboarding: View {
                 Divider()
                     .frame(width: 0)
                     .padding(8)
+                
+                if error {
+                    withAnimation() {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                    }
+                }
+                
                 VStack(alignment: .leading) {
                     Text("First Name *")
                         .padding(.bottom, -3)
@@ -96,7 +112,7 @@ struct Onboarding: View {
                                 .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
                         .padding(.bottom, 8)
                     
-                 
+                  
                     Text("Email *")
                         .padding(.bottom, -3)
                         .font(.system(size: 15))
@@ -107,30 +123,39 @@ struct Onboarding: View {
                                 .stroke(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353), lineWidth: 1))
                         .padding(.bottom, 8)
                         .autocorrectionDisabled()
-                    
-                    Button("Register"){
-                        if(firstName.isEmpty) {
-                            //UserDefaults.standard.set(firstName, forKey: kFirstName)
-                        } else if (lastName.isEmpty) {
-                            //UserDefaults.standard.set(lastName, forKey: kLastName)
-                        } else if (email.isEmpty) {
-                            //UserDefaults.standard.set(email, forKey: kEmail)
-                        } else if (email.range(of:"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", options: .regularExpression) == nil) {
-                            //
+                    HStack(alignment: .center) {
+                        Button("Register"){
+                            if(firstName.isEmpty) {
+                                error = true
+                                errorMessage = "First Name must be provided!"
+                            } else if (lastName.isEmpty) {
+                                error = true
+                                errorMessage = "Last Name must be provided!"
+                            } else if (email.isEmpty) {
+                                error = true
+                                errorMessage = "Email must be provided!"
+                            } else if (email.range(of:"^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", options: .regularExpression) == nil) {
+                                error = true
+                                errorMessage = "Email incorrect!"
+                            }
+                            else {
+                                isLoggedIn = true
+                                UserDefaults.standard.set(firstName, forKey: kFirstName)
+                                UserDefaults.standard.set(lastName, forKey: kLastName)
+                                UserDefaults.standard.set(email, forKey: kEmail)
+                                UserDefaults.standard.set(true, forKey: kIsLoggedIn)
+                                firstName = ""
+                                lastName = ""
+                                email = ""
+                            }
                         }
-                        else {
-                            isLoggedIn = true
-                            UserDefaults.standard.set(firstName, forKey: kFirstName)
-                            UserDefaults.standard.set(lastName, forKey: kLastName)
-                            UserDefaults.standard.set(email, forKey: kEmail)
-                            UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-                        }
+                        .padding()
+                        .background(Color(hue: 0.138, saturation: 0.966, brightness: 0.925))
+                        .cornerRadius(10)
+                        .foregroundColor(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
+                        .padding(.vertical, 15)
                     }
-                    .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
-                    .background(Color(hue: 0.138, saturation: 0.966, brightness: 0.925))
-                    .cornerRadius(10)
-                    .foregroundColor(Color(red: 0.28627450980392155, green: 0.3686274509803922, blue: 0.3411764705882353))
-                    .padding(.vertical, 15)
+                    .frame(maxWidth: .infinity)
                 }
                 .padding(.horizontal, 10)
                 Spacer()

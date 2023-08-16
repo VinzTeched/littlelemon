@@ -21,7 +21,8 @@ struct UserProfile: View {
     
     
     var body: some View {
-        NavView(title: "Nothing", content:
+        NavView(title: "Home", content:
+                    ScrollView(.vertical, showsIndicators: false){
             VStack(alignment: .leading) {
                 Group {
                     Text("Personal Information")
@@ -145,10 +146,10 @@ struct UserProfile: View {
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
                 }
-                Spacer()
-            
-        }
+                
+            }
             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }
       )
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73913332A8CDD0900061FD2 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73913322A8CDD0900061FD2 /* OnboardingTwo.swift */; };
 		E753DC332A7D382000A2A246 /* littlelemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753DC322A7D382000A2A246 /* littlelemonApp.swift */; };
 		E753DC372A7D382200A2A246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753DC362A7D382200A2A246 /* Assets.xcassets */; };
 		E753DC3A2A7D382200A2A246 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753DC392A7D382200A2A246 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E73913322A8CDD0900061FD2 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
 		E753DC2F2A7D382000A2A246 /* littlelemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = littlelemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E753DC322A7D382000A2A246 /* littlelemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = littlelemonApp.swift; sourceTree = "<group>"; };
 		E753DC362A7D382200A2A246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				E753DC322A7D382000A2A246 /* littlelemonApp.swift */,
 				E7A437642A891AD600F77B07 /* font */,
 				E77039B52A8259FF00E12DEA /* Onboarding.swift */,
+				E73913322A8CDD0900061FD2 /* OnboardingTwo.swift */,
 				E77039BD2A82F4DF00E12DEA /* UserProfile.swift */,
 				E7A4376A2A8922F100F77B07 /* MarkaziText-Medium.ttf */,
 				E7A4376C2A89239300F77B07 /* MarkaziText-Regular.ttf */,
@@ -197,6 +200,7 @@
 				E79DEF1C2A84DE3400288283 /* MenuList.swift in Sources */,
 				E753DC332A7D382000A2A246 /* littlelemonApp.swift in Sources */,
 				E7989D6E2A8662D4003EE054 /* MenuDetails.swift in Sources */,
+				E73913332A8CDD0900061FD2 /* OnboardingTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
