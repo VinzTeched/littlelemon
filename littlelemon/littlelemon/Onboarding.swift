@@ -11,6 +11,11 @@ let kFirstName = "first name key"
 let kLastName = "last name key"
 let kEmail = "email key"
 let kIsLoggedIn = "kIsLoggedIn"
+let kPhone = "phone key"
+let kOrderStatus = "order status key"
+let kPasswordChange = "password change key"
+let kSpecialOffer = "special offer key"
+let kNewsletter = "newsletter key"
 
 struct Onboarding: View {
     @State var firstName = ""
@@ -27,14 +32,8 @@ struct Onboarding: View {
         NavigationStack {
             VStack(spacing: 5) {
                 Group{
-                    HStack {
-                        Spacer()
+                    HStack(alignment: .center) {
                         Image("Logo")
-                            .padding(.trailing, -40)
-                        Spacer()
-                        Image("Profile")
-                            .resizable()
-                            .frame(width: 50, height: 50)
                             
                     }
                     .padding(.trailing, 10)
@@ -82,14 +81,15 @@ struct Onboarding: View {
                     .frame(width: 0)
                     .padding(8)
                 
-                if error {
-                    withAnimation() {
+                ZStack {
+                    if error {
                         Text(errorMessage)
                             .foregroundColor(.red)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                     }
                 }
+                .animation(Animation.easeInOut(duration: 0.5), value: error)
                 
                 VStack(alignment: .leading) {
                     Text("First Name *")
@@ -144,6 +144,11 @@ struct Onboarding: View {
                                 UserDefaults.standard.set(lastName, forKey: kLastName)
                                 UserDefaults.standard.set(email, forKey: kEmail)
                                 UserDefaults.standard.set(true, forKey: kIsLoggedIn)
+                                UserDefaults.standard.set("", forKey: kPhone)
+                                UserDefaults.standard.set(true, forKey: kOrderStatus)
+                                UserDefaults.standard.set(true, forKey: kPasswordChange)
+                                UserDefaults.standard.set(false, forKey: kSpecialOffer)
+                                UserDefaults.standard.set(true, forKey: kNewsletter)
                                 firstName = ""
                                 lastName = ""
                                 email = ""
@@ -168,6 +173,7 @@ struct Onboarding: View {
                     isLoggedIn = true
                 }
             }
+            .navigationBarBackButtonHidden()
         }
     }
 }

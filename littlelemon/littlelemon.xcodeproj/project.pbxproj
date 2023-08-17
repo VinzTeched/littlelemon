@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E73913332A8CDD0900061FD2 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73913322A8CDD0900061FD2 /* OnboardingTwo.swift */; };
+		E73FDAA12A8E1E6A002353AE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FDAA02A8E1E6A002353AE /* ViewModel.swift */; };
 		E753DC332A7D382000A2A246 /* littlelemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753DC322A7D382000A2A246 /* littlelemonApp.swift */; };
 		E753DC372A7D382200A2A246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753DC362A7D382200A2A246 /* Assets.xcassets */; };
 		E753DC3A2A7D382200A2A246 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753DC392A7D382200A2A246 /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		E73913322A8CDD0900061FD2 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
+		E73FDAA02A8E1E6A002353AE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E753DC2F2A7D382000A2A246 /* littlelemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = littlelemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E753DC322A7D382000A2A246 /* littlelemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = littlelemonApp.swift; sourceTree = "<group>"; };
 		E753DC362A7D382200A2A246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				E7A4376A2A8922F100F77B07 /* MarkaziText-Medium.ttf */,
 				E7A4376C2A89239300F77B07 /* MarkaziText-Regular.ttf */,
 				E79DEF192A84DE2600288283 /* MenuItem.swift */,
+				E73FDAA02A8E1E6A002353AE /* ViewModel.swift */,
 				E7989D6D2A8662D4003EE054 /* MenuDetails.swift */,
 				E79DEF1B2A84DE3400288283 /* MenuList.swift */,
 				E79DEF152A84DDC900288283 /* FetchedObjects.swift */,
@@ -194,6 +197,7 @@
 				E77039BC2A82B34500E12DEA /* EmptyView.swift in Sources */,
 				E77039BE2A82F4DF00E12DEA /* UserProfile.swift in Sources */,
 				E77039B82A82864F00E12DEA /* Home.swift in Sources */,
+				E73FDAA12A8E1E6A002353AE /* ViewModel.swift in Sources */,
 				E77039BA2A82876700E12DEA /* Menu.swift in Sources */,
 				E79DEF1A2A84DE2600288283 /* MenuItem.swift in Sources */,
 				E79DEF162A84DDC900288283 /* FetchedObjects.swift in Sources */,

@@ -51,10 +51,14 @@ struct Menu: View {
                     Image("Logo")
                         .padding(.trailing, -40)
                     Spacer()
-                    Image("Profile")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        
+                    
+                    NavigationLink(destination: UserProfile()) {
+                        Image("Profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                    }
+                    
                 }
                 .padding(.trailing, 10)
             }

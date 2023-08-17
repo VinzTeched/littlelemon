@@ -10,7 +10,7 @@ import SwiftUI
 struct Home: View {
     let persistenceController = PersistenceController.shared
     var body: some View {
-        TabView {
+        /*TabView {
             Menu()
                 .tabItem{
                     return Label("Menu", systemImage: "list.dash")
@@ -29,7 +29,10 @@ struct Home: View {
                     }
                 }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)*/
+        Menu()
+            .navigationBarBackButtonHidden(true)
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 }
 
